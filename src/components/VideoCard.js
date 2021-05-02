@@ -1,12 +1,12 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import TextTruncate from 'react-text-truncate'
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 
 const posterURL = 'https://image.tmdb.org/t/p/original/'
 
-const VideoCard = ({ movie }) => {
+const VideoCard = forwardRef(({ movie }, ref) => {
     return (
-        <div className="videocard">
+        <div ref={ref} className="videocard">
             <div className="videocard__img">
                 <img 
                     src={`${posterURL}${movie.backdrop_path || movie.poster_path}`} 
@@ -29,6 +29,6 @@ const VideoCard = ({ movie }) => {
             </p>
         </div>
     )
-}
+})
 
 export default VideoCard

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import VideoCard from './VideoCard'
 import axios from '../api/axios'
+import FlipMove from 'react-flip-move'
 
 const Results = ({ selectedOption }) => {
     const [movies, setMovies] = useState([])
@@ -19,9 +20,11 @@ const Results = ({ selectedOption }) => {
 
     return (
         <div className="results">
-        {movies.map(movie => (
-            <VideoCard key={movie.id} movie={movie} />
-        ))}
+            <FlipMove>
+            {movies.map(movie => (
+                <VideoCard key={movie.id} movie={movie} />
+            ))}
+            </FlipMove>
         </div>
     )
 }
