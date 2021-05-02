@@ -1,24 +1,21 @@
 import React, { useEffect, useState } from 'react'
 import VideoCard from './VideoCard'
 import axios from '../api/axios'
-import requests from '../api/requests'
 
-const Results = () => {
+const Results = ({ selectedOption }) => {
     const [movies, setMovies] = useState([])
 
     useEffect(() => {
         const fetchData = async() => {
-            const request = await axios.get(requests.fetchTrending)
-
-            console.log(request.data.results);
-
+            const request = await axios.get(selectedOption)
+            // console.log(request.data.results);
             setMovies(request.data.results)
 
             return request
         }
 
         fetchData()
-    }, [])
+    }, [selectedOption])
 
     return (
         <div className="results">
