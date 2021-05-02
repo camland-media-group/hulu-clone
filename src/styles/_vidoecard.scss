@@ -1,7 +1,7 @@
 .videocard {
     color: #fff;
-    width: 400px;
-    height: 300px;
+    width: 450px;
+    height: 400px;
     margin: 20px;
     padding: 20px;
     transition: all .5s;
@@ -10,13 +10,35 @@
         transform: scale(1.09);
     }
 
-    > img {
-        height: 200px;
-        width: 400px;
-        object-fit: cover;
+    .videocard__img {
+        img {
+            width: 450px;
+            height: 300px;
+            object-fit: cover;
+            vertical-align: bottom;
+        }
+    }
+
+    > p {
+        padding-top: 8px;
     }
 
     > h2 {
         padding-top: 10px;
+    }
+
+    .videocard__stats {
+        display: none;
+    }
+
+    &:hover {
+        .videocard__stats {
+            display: flex;
+            align-items: center;
+
+            span {
+                margin: 0 3px;
+            }
+        }
     }
 }
