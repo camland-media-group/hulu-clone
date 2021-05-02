@@ -1,0 +1,22 @@
+.videocard {
+    color: #fff;
+    width: 400px;
+    height: 300px;
+    margin: 20px;
+    padding: 20px;
+    transition: all .5s;
+
+    &:hover {
+        transform: scale(1.09);
+    }
+
+    > img {
+        height: 200px;
+        width: 400px;
+        object-fit: cover;
+    }
+
+    > h2 {
+        padding-top: 10px;
+    }
+}
